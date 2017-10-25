@@ -7,43 +7,68 @@ var europe = [168,170,178,190,203,276,408,547,675,734];
 var latinAmerica = [40,20,10,16,24,38,74,167,508,784];
 var northAmerica = [6,3,2,2,7,26,82,172,312,433];
 
-var ctx = document.getElementById("myChart");
-var myChart = new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: years,
-    datasets: [
-      {
-    data: africa,
-    label: "Africa",
-    borderColor: "black",
-    backgroundColor: "red",
-    fill: true
-  },
-  {
-    data: asia,
-    label: "Asia",
-    borderColor: "#3e95cd",
-    fill: false
-  },
-  {
-    data: europe,
-    label: "Europe",
-    borderColor: "#3e95cd",
-    fill: false
-  },
-  {
-    data: latinAmerica,
-    label: "Latin America",
-    borderColor: "#3e95cd",
-    fill: false
-  },
-  {
-    data: northAmerica,
-    label: "North America",
-    borderColor: "#3e95cd",
-    fill: false
-  }
-]
-  }
+
+// Bar chart
+new Chart(document.getElementById("barChart"), {
+    type: 'bar',
+    data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      datasets: [
+        {
+          label: "Population (millions)",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: [2478,5267,734,784,433]
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
 });
+
+// This code works too, but will give a different visualization
+// var ctx = document.getElementById("barChart");
+// var myChart = new Chart(ctx, {
+//   type: 'bar',
+//   data: {
+//     labels: years,
+//     datasets: [
+//       {
+//     data: africa,
+//     label: "Africa",
+//     // borderColor: "black",
+//     backgroundColor: "red",
+//     fill: true
+//   },
+//   {
+//     data: asia,
+//     label: "Asia",
+//     // borderColor: "#3e95cd",
+//     backgroundColor: "green",
+//     fill: true
+//   },
+//   {
+//     data: europe,
+//     label: "Europe",
+//     borderColor: "#3e95cd",
+//     fill: false
+//   },
+//   {
+//     data: latinAmerica,
+//     label: "Latin America",
+//     borderColor: "#3e95cd",
+//     fill: false
+//   },
+//   {
+//     data: northAmerica,
+//     label: "North America",
+//     borderColor: "#3e95cd",
+//     fill: false
+//   }
+// ]
+//   }
+// });

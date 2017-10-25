@@ -141,3 +141,31 @@ All we need to do now is copy the code for Africa and paste it another four time
     }
 
 If you refresh, you should have a graph visualizing the earth’s population over time
+
+# Bar Charts
+
+Bar charts are created by setting type to bar (to flip the direction of the bars, set type to horizontalBar). The colors of the bars are set by passing one color to backgroundColor (all bars will have the same color), or an array of colors.
+
+If you’re passing an array (like in the example below), the colors are assigned to the label and number that share the same index in their respective arrays. I.e., below, “Africa” being the first label, will be set to #3e95cd (the first color), and 2478 (the first number).
+
+    // Bar chart
+    new Chart(document.getElementById("bar-chart"), {
+        type: 'bar',
+        data: {
+          labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+          datasets: [
+            {
+              label: "Population (millions)",
+              backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+              data: [2478,5267,734,784,433]
+            }
+          ]
+        },
+        options: {
+          legend: { display: false },
+          title: {
+            display: true,
+            text: 'Predicted world population (millions) in 2050'
+          }
+        }
+    });
