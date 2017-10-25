@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Horizontal Bar Chart</title>
+    <title>Bubble Chart</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -10,7 +10,7 @@
     <div class="wrapper">
       <h1>World Population Over Time</h1>
       <h2>Number of people (in millions) living on earth, the last 500 years</h2>
-      <canvas id="horizontalBarChart" width="1600" height="900"></canvas>
+      <canvas id="bubbleChart" width="1600" height="900"></canvas>
 
 
     </div>
@@ -18,3 +18,12 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+
+<!-- Bubble charts can be great for visualizing a lot of different data points simultaneously. In this example, every bubble is made up of three values: x position, y position, and size (r)—showing the GDP, happiness, and population, respectively, of each country.
+
+In the example above, I’m using the happiness index from the World Happiness Report for a country’s Y position, GDP estimates from International Monetary Fund to set the X position, and the population size to set the size of the bubble. (Note that I’ve removed some of the data in the example code to reduce the amount of code you have to copy.)
+
+You can pass several objects (setting x, y, and x) to each data array within every dataset object (each object will create a new bubble), but in this example I’m using only one object per array since I want every bubble to have a unique color and label.
+
+ -->
