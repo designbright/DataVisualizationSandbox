@@ -61,3 +61,46 @@ var myChart = new Chart(ctx, {
     ]
   }
 });
+
+…open up index.html in a browser, refresh and… tada! You created a graph!
+
+## Understanding the Code
+**Locate the canvas element that we added to index.html file**
+
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+
+**Using that canvas element, we create a line chart (type: 'line'), and pass along some of our data**
+
+  type: 'line',
+  data: {
+
+**labels: years sets our array of years for the labels along the x-axis**
+
+    labels: years,
+    datasets: [
+      {
+**data: africa uses our africa variable to draw the line.**
+        data: africa
+      }
+    ]
+  }
+});
+
+
+For every line that we want to create, we add another object to the datasets array. On every object we can make a range of adjustments: we can not only pass the data to draw the line, but we can change the name, change the beavior, and change the looks of the line.
+
+5. Style the Line
+Start out by giving our first line a name. After data: africa, add a comma (hey! I’m serious about the comma (remember the comma!), miss it and everything breaks), create a new row, and add label: "Africa":
+
+  {
+    data: africa,
+    label: "Africa"
+  }
+
+  To set the border color and remove the big gray area below the graph, add another comma after label: "Africa" and add these two lines:
+
+    borderColor: "#3e95cd",
+    fill: false
+
+refresh and you should see a blue line named Africa
