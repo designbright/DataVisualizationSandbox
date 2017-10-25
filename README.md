@@ -1,6 +1,7 @@
 
 # Intro to Data Visualization with Chart.js
 http://tobiasahlin.com/blog/introduction-to-chartjs/
+http://tobiasahlin.com/blog/chartjs-charts-to-get-you-started/
 
 We’re going to create a simple but powerful responsive line graph, visualizing the world population during the last 500 years, and a prediction for 2050
 
