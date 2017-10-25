@@ -103,4 +103,41 @@ Start out by giving our first line a name. After data: africa, add a comma (hey!
     borderColor: "#3e95cd",
     fill: false
 
-refresh and you should see a blue line named Africa
+Refresh and you should see a blue line named Africa
+
+6. Add the Remaining data
+
+All we need to do now is copy the code for Africa and paste it another four times, adding a comma after every }. Go through the list of lines and make sure that you use all our region variables (asia, europe, etc.), and name the lines accordingly. Once you’re done, it should look something like this:
+
+    {
+      data: africa,
+      label: "Africa",
+      borderColor: "#3e95cd",
+      fill: false
+    },
+    {
+      data: asia,
+      label: "Asia",
+      borderColor: "#3e95cd",
+      fill: false
+    },
+    {
+      data: europe,
+      label: "Europe",
+      borderColor: "#3e95cd",
+      fill: false
+    },
+    {
+      data: latinAmerica,
+      label: "Latin America",
+      borderColor: "#3e95cd",
+      fill: false
+    },
+    {
+      data: northAmerica,
+      label: "North America",
+      borderColor: "#3e95cd",
+      fill: false
+    }
+
+If you refresh, you should have a graph visualizing the earth’s population over time
