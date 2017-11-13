@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- <script src="https://d3js.org/d3.v4.js"></script> -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="d3/style.css">
+  </head>
+  <body>
+
+    <!--Basic SVG Rectangles in D3  -->
+    <svg width="500" height="500">
+      <rect x="0" y="0" width="300" height="200"></rect>
+    </svg>
+
+    <svg width="500" height="500">
+      <rect x="0" y="0" width="300" height="200" fill="yellow"></rect>
+  </svg>
+
+  <!--  Basic Line in SVG -->
+  <svg width="500" height="500">
+    <line x1="100" y1="50" x2="500" y2="50" stroke="black"/>
+  </svg>
+
+  <!--Line Attributes  -->
+  <!-- x1: This is the x-coordinate of the first point
+  y1: This is the y-coordinate of the first point
+  x2: This is the x-coordinate of the second point
+  y2: This is the y-coordinate of the second point -->
+
+  <p>Paragraph 1</p>
+  <p id="p2">Paragraph 2</p>
+
+  <svg class="chart" width="420" height="120">
+        <g transform="translate(0,0)">
+            <rect width="50" height="19"></rect>
+            <text x="47" y="9.5" dy=".35em">5</text>
+        </g>
+        <g transform="translate(0,20)">
+            <rect width="100" height="19"></rect>
+            <text x="97" y="9.5" dy=".35em">10</text>
+        </g>
+        <g transform="translate(0,40)">
+            <rect width="120" height="19"></rect>
+            <text x="117" y="9.5" dy=".35em">12</text>
+        </g>
+    </svg>
+
+    <script src="script.js"></script>
+  </body>
+</html>

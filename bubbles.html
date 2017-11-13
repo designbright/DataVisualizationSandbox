@@ -1,0 +1,87 @@
+https://bl.ocks.org/susielu/26af5aa1cc9bfaba0f1bb4098b66deb6
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,900' rel='stylesheet' type='text/css'>
+
+    <style>
+     body{
+        background-color: whitesmoke;
+     }
+
+    </style>
+</head>
+<body>
+    <canvas width="1660" height="1400"></canvas>
+    <script src="https://d3js.org/d3.v4.js"></script>
+
+    <script>
+    const width = 1660,
+    height = 1400,
+    radius = 28,
+    spacing = radius*4,
+    rows = 100;
+
+    const canvas = document.querySelector("canvas"),
+        context = canvas.getContext("2d");
+    context.globalCompositeOperation = "multiply"
+    let movement = radius/2;
+    let direction = 1;
+
+    const drawCircle = (d, i, movement ) => {
+
+      if (d.juices === "Y"){
+       context.fillStyle = "rgba(0, 255, 255, 0.8)" //blue
+        context.beginPath();
+        context.ellipse(20 + spacing * (i % rows), 20 + spacing * Math.floor(i/rows) - movement, radius, radius, 45 * Math.PI/180, 0, 2 * Math.PI);
+        context.fill()
+      }
+
+      if (d.cheese === "Y"){
+       context.fillStyle = "rgba(245, 245, 0, 0.8)" //yellow
+        context.beginPath();
+        context.ellipse(20 + spacing * (i % rows) - movement, 20 + spacing * Math.floor(i/rows), radius, radius, 45 * Math.PI/180, 0, 2 * Math.PI);
+        context.fill()
+      }
+
+      if (d.bakedgoods === "Y"){
+        context.fillStyle = "rgba(255, 0, 255, 0.8)" //pink
+        context.beginPath();
+        context.ellipse(20 + spacing * (i % rows) + movement, 20 + spacing * Math.floor(i/rows), radius, radius, 45 * Math.PI/180, 0, 2 * Math.PI);
+        context.fill()
+      }
+
+      if (d.cheese === "N" && d.juices === "N" && d.bakedgoods === "N") {
+        context.beginPath();
+        context.strokeStyle = "grey"
+        context.ellipse(20 + spacing * (i % rows), 20 + spacing * Math.floor(i/rows), radius, radius, 45 * Math.PI/180, 0, 2 * Math.PI);
+        context.stroke()
+      }
+    }
+
+    const draw  = (data) => {
+      context.clearRect(0,0,width,height);
+
+      data.forEach((d, i) => drawCircle(d, i, Math.floor(movement)) )
+      window.requestAnimationFrame(draw.bind(null, data))
+
+
+      if (movement > radius){
+        direction = -1
+      } else if (movement < radius/2){
+        direction = 1
+      }
+
+      movement += .5*direction
+
+    }
+
+    d3.json('https://gist.githubusercontent.com/susielu/3d194b8660ec6ab214a3/raw/38a2cdc96efaaaeb4849c86b600de5dfecea2dec/farmers-markets-lat-long.json',  (error, data) => {
+      draw(data)
+    });
+
+    </script>
+</body>
+</html>
